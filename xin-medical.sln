@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xin-medical", "xin-medical\xin-medical.csproj", "{AE897CAF-D747-4882-8B23-25C7E23C7724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xin-medical.Tests", "xin-medical.Tests\xin-medical.Tests.csproj", "{92363A04-0D07-4714-9710-6C8FB6B63D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE897CAF-D747-4882-8B23-25C7E23C7724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE897CAF-D747-4882-8B23-25C7E23C7724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE897CAF-D747-4882-8B23-25C7E23C7724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE897CAF-D747-4882-8B23-25C7E23C7724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92363A04-0D07-4714-9710-6C8FB6B63D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92363A04-0D07-4714-9710-6C8FB6B63D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92363A04-0D07-4714-9710-6C8FB6B63D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92363A04-0D07-4714-9710-6C8FB6B63D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A43DA44D-1ADC-4A39-B56A-8EF41D020D95}
+	EndGlobalSection
+EndGlobal
