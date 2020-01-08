@@ -1,31 +1,28 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Homepage";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Welcome!</h1>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Manage Patients</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Here you can add new patients, remove patients and edit the information about your patients.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        @Html.ActionLink(HttpUtility.HtmlDecode("Manage Patients &raquo;"), "Index", "ManagePatients", null, new { @class = "btn btn-primary btn-block" })
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Manage Exams</h2>
+        <p>Here you can add new types of exams, remove exams and edit already existing exams.</p>
+        @Html.ActionLink(HttpUtility.HtmlDecode("Manage Exams &raquo;"), "Contact", "Home", null, new { @class = "btn btn-primary btn-block" })
+
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Fill out Exam-results</h2>
+        <p>Here you can fill out the results for the exam performed on a patient.</p>
+        <p><a class="btn btn-primary btn-block" href="">Fill out Exam-results &raquo;</a></p>
     </div>
 </div>

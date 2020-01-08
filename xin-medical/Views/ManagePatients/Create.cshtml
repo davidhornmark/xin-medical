@@ -1,0 +1,54 @@
+﻿@model xin_medical.Models.Patient
+@{
+    ViewBag.Title = "Add a New Patient";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form method="post">
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>Personal:</h4>
+            <div class="input-group">
+                <span class="input-group-addon">Firstname: </span>
+                <input id="Firstname" type="text" class="form-control" name="Firstname" placeholder="Firstname..">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Lastname: </span>
+                <input id="Lastname" type="text" class="form-control" name="Lastname" placeholder="Lastname..">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Birthdate:</span>
+                <input id="Birthdate" type="date" class="form-control" name="Birthdate">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Gender:</span>
+                @Html.EnumDropDownListFor(model => Model.Gender, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>Contact:</h4>
+            <div class="input-group">
+                <span class="input-group-addon">Phone:</span>
+                <input id="Phonenumber" type="text" class="form-control" name="Phonenumber" placeholder="Phonenumber..">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Address:</span>
+                <input id="Address" type="text" class="form-control" name="Address" placeholder="Address..">
+            </div>
+            <h4>Socials:</h4>
+            <div class="input-group">
+                <span class="input-group-addon">WeChat: </span>
+                <input id="WeChat" type="text" class="form-control" name="WeChat" placeholder="WeChat..">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <button type="submit" class="btn btn-block btn-success">Submit</button>
+            @Html.ActionLink("Cancel", "Index", "ManagePatients", null, new { @class = "btn btn-danger btn-block" })
+
+        </div>
+    </div>
+</form>

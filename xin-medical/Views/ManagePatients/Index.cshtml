@@ -1,0 +1,69 @@
+﻿@model List<xin_medical.Models.Patient>
+@{
+    ViewBag.Title = "Manage Patients";
+}
+
+<h2>@ViewBag.Title</h2>
+<input class="form-control" id="searchBar" type="text" placeholder="Search.." />
+<hr />
+<table id="patientsTable" class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="col-xs-3">Firstname</th>
+            <th class="col-xs-3">Lastname</th>
+            <th class="col-xs-1">Birthdate</th>
+            <th class="col-xs-1">Gender</th>
+            <th class="col-xs-4">Actions</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Firstname</td>
+        <td>@item.Lastname</td>
+        <td>@item.Birthdate.ToShortDateString()</td>
+        <td>@item.Gender</td>
+        <td>
+            @Html.ActionLink("Edit Info", "EditInfo", "ManagePatients", new { id = item.ID }, null)
+            |
+            @Html.ActionLink("View Records", "Records", "ManagePatients", new { id = item.ID }, null)
+            |
+            <div class="dropdown" style="display:inline;">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Add
+                      <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Entry to Medical History", "MedicalHistoryEntry", "Add", new { id = item.ID }, null)</li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    }
+</table>
+<div class="row">
+    <div class="col-xs-2">
+        @Html.ActionLink(HttpUtility.HtmlDecode("&laquo; Back"), "Index", "Home", null, new { @class = "btn btn-default btn-block" })
+    </div>
+    <div class="col-xs-2 col-xs-offset-8">
+        @Html.ActionLink(HttpUtility.HtmlDecode("Add a New Patient &raquo;"), "Create", "ManagePatients", null, new { @class = "btn btn-primary btn-block" })
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#searchBar").on("keyup", function () {
+            //var value = $(this).val().toLowerCase();
+            var value = $(this).val();
+            $("#patientsTable tr").filter(function () {
+                if ($(this).parent().is('thead') == false) {
+                    //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    $(this).toggle($(this).text().indexOf(value) > -1)
+                }
+            });
+         });
+    });
+</script>

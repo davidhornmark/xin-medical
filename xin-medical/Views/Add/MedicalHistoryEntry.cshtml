@@ -1,0 +1,15 @@
+﻿@model xin_medical.Models.Patient
+@{
+    ViewBag.Title = "Add a new Medical History Entry";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <h4>Personal</h4>
+        <p><strong>Name: </strong>@Model.Firstname @Model.Lastname</p>
+        <p><strong>Birthdate: </strong>@Model.Birthdate.ToShortDateString()</p>
+        <p><strong>Gender: </strong>@Model.Gender</p>
+    </div>
+</div>
+

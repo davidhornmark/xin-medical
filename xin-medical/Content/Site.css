@@ -20,5 +20,18 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+}
+
+.jumbotron {
+    margin-top: 2rem;
+    color: white !important;
+    background-color: #337ab7 !important;
+}
+
+.input-group-addon {
+    min-width: 100px;
+}
+
+.managePatientsInfoBox {
+    min-height: 50px;
 }

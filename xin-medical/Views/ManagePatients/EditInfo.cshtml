@@ -1,0 +1,60 @@
+﻿@model  xin_medical.Models.Patient
+@{
+    ViewBag.Title = "Edit information";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form method="post">
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>Personal:</h4>
+            <div class="input-group">
+                <span class="input-group-addon">Firstname: </span>
+                @Html.EditorFor(Model => Model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Lastname: </span>
+                @Html.EditorFor(Model => Model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Birthdate:</span>
+                @Html.EditorFor(Model => Model.Birthdate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Gender:</span>
+                @Html.EnumDropDownListFor(model => Model.Gender, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>Contact:</h4>
+            <div class="input-group">
+                <span class="input-group-addon">Phone:</span>
+                @Html.EditorFor(Model => Model.Phonenumber, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Address:</span>
+                @Html.EditorFor(Model => Model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <h4>Socials:</h4>
+            <div class="input-group">
+                <span class="input-group-addon">WeChat: </span>
+                @Html.EditorFor(Model => Model.WeChat, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <button type="submit" class="btn btn-block btn-success">Submit</button>
+            @Html.ActionLink("Cancel", "Index", "ManagePatients", null, new { @class = "btn btn-danger btn-block" })
+
+        </div>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#BirthDate').val("@Model.Birthdate.ToShortDateString()");
+    });
+</script>
